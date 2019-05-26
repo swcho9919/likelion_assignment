@@ -1,0 +1,32 @@
+{% extends "home.html"%}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        <div class='detail_content'>
+            <div class='detail_image'>
+                <img src="{{ post.img.url }}" width="100%" height="100%" />
+            </div>
+            <ul>
+                {% for comment in post.comments.all %}
+                    <li>{{ comment.content }}<a href="{% url 'delete_comment' post.pk comment.pk %}">삭제하기</a></li>
+                {% endfor %}
+            </ul>
+
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" />
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

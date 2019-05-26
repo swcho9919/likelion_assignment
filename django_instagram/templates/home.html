@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>조성우</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'home.css' %}" />
+    <script src="main.js"></script>
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-light new_class  ">
+        <div class="instagram_icon">
+        <i class="fab fa-instagram fa-2x"></i>
+       </div>  
+           <a class="navbar-brand" href="#">Instagram</a>
+        <div class="searchbar"></div>
+        <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+            
+            <div class="icons" style="font-size: 0.5rem;">
+              <ul class="navbar-nav mr-auto">
+                <li class="compass">
+                    <i class="far fa-compass fa-3x"></i>
+                </li>
+                <li class="heart">
+                    <i class="far fa-heart fa-3x"></i>
+                </li>
+                <li class="user">
+                    <i class="far fa-user fa-3x"></i>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    
+    
+    <!-- Description-->
+    
+        <div class="description">
+        <img class="profile" src="{% static 'instagram_profile.PNG' %}" width=170px height=150px >
+        <div class = "description_2">
+            <div class="flexbox1">
+            <div class="user_id">jessesungwoo96</div>
+            <div class="profile_fix"><a href="{% url 'new' %}">사진 올리기</a></div>
+            <div class="setting"><i class="fas fa-cog fa-lg" ></i></div>       
+            </div>
+            <div class="flexbox2">
+            <div class="post">게시물 <strong>74</strong></div>
+            <div class="followers">팔로워 <strong>251</strong></div>
+            <div class="follow">팔로우 <strong>315</strong></div>
+            </div>
+            <div class="flexbox3">
+            <div class="name1"><strong>조성우</strong></div>
+            <div class="college">Korea Univ. Business School</div>
+            <div>고려대학교 멋쟁이 사자처럼 7기</div>
+            <div>인슽하 팔로우 환영</div>
+            </div>
+        </div>
+        </div>
+    <!-- Navs-->
+    {% block content %}
+        <ul class="nav nav-tabs navss justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-th fa-lg"></i></i>게시물</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-tv"></i>멋사TV</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-flag"></i>태그됨</a>
+            </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="pictures">
+                        {% for post in posts %}
+                            <div class="uploads">
+                                <h2><a href="{% url 'detail' post.pk %}"><img src="{{ post.img.url }}" width="100%" height="100%" /></a></h2>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="pictures">
+                    <img class="img1" src="tag-1.PNG" width=30% height=30%>
+                    <img class="img2" src="tag-2.PNG" width=30% height=30%>
+                    <img class="img3" src="tag-3.PNG" width=30% height=30%>
+                    <img class="img4" src="tag-4.PNG" width=30% height=30%>
+                    <img class="img5" src="tag-5.PNG" width=30% height=30%>
+                    <img class="img6" src="tag-6.PNG" width=30% height=30%>
+                </div>
+            </div>
+            </div>
+    <!-- Img-->
+
+    <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    {% endblock %}
+</body>
+</html>
