@@ -31,7 +31,8 @@ font-size: 20px;
     margin: 17px;
 }
 .profile{
-    margin-right: -500px;
+    /* margin-right: -500px; */
+    align-content: left;
 }
 .user_id{
     display:inline-block;
@@ -137,4 +138,176 @@ font-size: 20px;
     margin-top: 30px;
 }
 .comment_box{
+}
+
+@media(max-width:768px){
+    .icons{
+        margin-left: 20%;
+        position: relative;
+        font-size: 0.8rem;
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icons .compass{
+        margin: 1%;
+    }
+    .icons .user{
+        margin: 1%x; 
+    }
+    .icons .heart{
+        margin: 1%;
+    }
+    .navbar {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+    .searchbar {
+        margin: 0%;
+        width: 0%;
+    }
+    .description_2{
+        display : flex;
+        flex-direction: column;
+        margin-right: 20%;
+    }
+    .flexbox3{
+        display:none;
+    }
+    .flexbox1{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height:50px;
+        justify-content: space-between;
+    }
+    .profile {
+        width: 100px;
+        height: 100px;
+        margin-left: 20%
+    }
+    .profi_div {
+        display: flex;
+        flex-direction: row;
+    }
+    .flexbox2 {
+        width: 60%;
+        justify-content: right;
+        margin-right: 0%;
+        margin-left: 30%;
+    }
+}
+
+@media(min-width:375px){
+    .icons{
+        margin-left: 20%;
+        position: relative;
+        font-size: 0.5rem;
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icons .compass{
+        margin: 1%;
+    }
+    .icons .user{
+        margin: 1%x; 
+    }
+    .icons .heart{
+        margin: 1%;
+    }
+    .navbar {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        padding: 5%;
+    }
+    .searchbar {
+        margin: 0%;
+        width: 0%;
+    }
+    .description_2{
+        display : flex;
+        flex-direction: column;
+        margin-right: 20%;
+    }
+    .flexbox3{
+        display:none;
+    }
+    .flexbox1{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height:50px;
+        justify-content: space-between;
+    }
+    .profile {
+        width: 100px;
+        height: 100px;
+        margin-left: 20%
+    }
+    .profi_div {
+        display: flex;
+        flex-direction: row;
+    }
+    .flexbox2 {
+        width: 60%;
+        justify-content: right;
+        margin-right: 0%;
+        margin-left: 40%;
+    }
+    .user_id{
+        font-size:1.3rem;
+        margin-right: 20px;
+    }
+    .post{
+        font-size: 0.8rem;
+    }
+    .followers{
+        font-size: 0.8rem;
+    }
+    .follow{
+        font-size: 0.8rem;
+    }
+    .nav-item{
+        font-size: 0.7rem;
+    }
+    .setting{
+        margin:1%;
+        font-size: 0.9rem;
+        padding:0%;
+    }
+    .pictures{
+        width:95%;
+    }
+    .icons{
+        display:flex;
+        flex-direction: row;
+        justify-content: right;
+        font-size: 0.8rem;
+        margin-left: 40%;
+        
+    }
+    .top_right_icon{
+        display:flex;
+        flex-direction: row;
+        justify-content: left;
+        font-size: 0.8rem;
+        align-content: center;
+        margin-bottom: 20%;
+        margin-top: 5%;
+    }
+    .navbar-brand{
+        position: relative;
+        margin-left:5px;
+        padding: 5px;
+    }
+    .icons .user{
+        margin:0%;
+    }
 }

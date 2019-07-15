@@ -17,18 +17,18 @@
 <body>
     <!-- Navbar-->
 
-<nav class="navbar navbar-expand-lg navbar-light new_class  ">
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light new_class d-flex flex-row col-12 col-md-6"> {% endcomment %}
+    <div class=top_right_icon>
         <div class="instagram_icon">
-        <i class="fab fa-instagram fa-2x"></i>
-       </div>  
-           <a class="navbar-brand" href="#">Instagram</a>
-        <div class="searchbar"></div>
+            <i class="fab fa-instagram fa-2x"></i>
+        </div>  
+            <a class="navbar-brand" href="#">Instagram</a>
+        {% comment %} <div class="searchbar"></div> {% endcomment %}
         <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              </form>
-            
-            <div class="icons" style="font-size: 0.5rem;">
-              <ul class="navbar-nav mr-auto">
+            <input class="form-control mr-sm-2 d-none d-lg-block" type="search" placeholder="Search" aria-label="Search">
+        </form>
+        <div class="icons" style="font-size: 0.5rem;">
+            <ul class="navbar-nav navbar-expand-lg mr-auto d-flex flex-row">
                 <li class="compass">
                     <i class="far fa-compass fa-3x"></i>
                 </li>
@@ -38,37 +38,43 @@
                 <li class="user">
                     <i class="far fa-user fa-3x"></i>
                 </li>
-              </ul>
-            </div>
-          </nav>
+            </ul>
+        </div>
+    </div>
+        
+{% comment %} </nav> {% endcomment %}
     
     
     <!-- Description-->
-    
+{% comment %}     
         <div class="description">
-        <img class="profile" src="{% static 'instagram_profile.PNG' %}" width=170px height=150px >
-        <div class = "description_2">
+            <img class="profile" src="{% static 'instagram_profile.PNG' %}" width=170px height=150px >
+        </div>
+        <div class = "description_2"> {% endcomment %}
             <div class="flexbox1">
-            <div class="user_id">jessesungwoo96</div>
-            <div class="profile_fix"><a href="{% url 'new' %}">사진 올리기</a></div>
-            <div class="setting"><i class="fas fa-cog fa-lg" ></i></div>       
+                <img class="profile" src="{% static 'instagram_profile.PNG' %}" width=30% height=100% >
+                <div class="profi_div">
+                    <div class="user_id">jessesungwoo96</div>
+                    {% comment %} <div class="profile_fix"><a href="{% url 'new' %}">사진 올리기</a></div> {% endcomment %}
+                    <div class="setting"><i class="fas fa-cog fa-md" ></i></div>    
+                </div>   
             </div>
             <div class="flexbox2">
-            <div class="post">게시물 <strong>74</strong></div>
-            <div class="followers">팔로워 <strong>251</strong></div>
-            <div class="follow">팔로우 <strong>315</strong></div>
+                <div class="post">게시물 <strong>74</strong></div>
+                <div class="followers">팔로워 <strong>251</strong></div>
+                <div class="follow">팔로우 <strong>315</strong></div>
             </div>
             <div class="flexbox3">
-            <div class="name1"><strong>조성우</strong></div>
-            <div class="college">Korea Univ. Business School</div>
-            <div>고려대학교 멋쟁이 사자처럼 7기</div>
-            <div>인슽하 팔로우 환영</div>
+                <div class="name1"><strong>조성우</strong></div>
+                <div class="college">Korea Univ. Business School</div>
+                <div>고려대학교 멋쟁이 사자처럼 7기</div>
+                <div>인슽하 팔로우 환영</div>
             </div>
         </div>
         </div>
     <!-- Navs-->
     {% block content %}
-        <ul class="nav nav-tabs navss justify-content-center" id="myTab" role="tablist">
+        <ul class="nav nav-tabs navss justify-content-center " id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-th fa-lg"></i></i>게시물</a>
             </li>
@@ -80,25 +86,24 @@
             </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="pictures">
-                        {% for post in posts %}
-                            <div class="uploads">
-                                <h2><a href="{% url 'detail' post.pk %}"><img src="{{ post.img.url }}" width="100%" height="100%" /></a></h2>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 <div class="pictures">
-                    <img class="img1" src="tag-1.PNG" width=30% height=30%>
+                    {% comment %} <img class="img1" src="tag-1.PNG" width=30% height=30%>
                     <img class="img2" src="tag-2.PNG" width=30% height=30%>
                     <img class="img3" src="tag-3.PNG" width=30% height=30%>
                     <img class="img4" src="tag-4.PNG" width=30% height=30%>
                     <img class="img5" src="tag-5.PNG" width=30% height=30%>
-                    <img class="img6" src="tag-6.PNG" width=30% height=30%>
+                    <img class="img6" src="tag-6.PNG" width=30% height=30%> {% endcomment %}
+                    <img class="img1" src="{% static 'tag-1.PNG' %}"  width=30% height=30% >
+                    <img class="img2" src="{% static 'tag-2.PNG' %}"  width=30% height=30% >
+                    <img class="img3" src="{% static 'tag-3.PNG' %}"  width=30% height=30% >
+                    <img class="img4" src="{% static 'tag-4.PNG' %}"  width=30% height=30% >
+                    <img class="img5" src="{% static 'tag-5.PNG' %}"  width=30% height=30% >
+                    <img class="img6" src="{% static 'tag-6.PNG' %}"  width=30% height=30% >
                 </div>
             </div>
             </div>
